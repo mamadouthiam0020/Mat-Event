@@ -229,6 +229,7 @@ section {
   font-weight: 700;
   letter-spacing: 0.08em;
   white-space: nowrap;
+  padding: 8px 4px;
   background: linear-gradient(120deg, var(--white), var(--mauve-light));
   -webkit-background-clip: text;
   background-clip: text;
@@ -254,7 +255,7 @@ section {
   transition: color 0.25s;
   position: relative;
   white-space: nowrap;
-  padding-bottom: 2px;
+  padding: 10px 6px;
 }
 
 .navbar__link::after {
@@ -2605,6 +2606,7 @@ section {
   cursor: pointer;
   letter-spacing: 0.05em;
   transition: color 0.2s;
+  padding: 8px 4px;
 }
 
 .lang__btn:hover {
@@ -3248,11 +3250,7 @@ html {
   }
 }
 
-@media (max-width: 620px) {
-  section {
-    padding: 64px 0;
-  }
-
+@media (max-width: 1024px) {
   .navbar__menu {
     position: fixed;
     top: 0;
@@ -3277,6 +3275,15 @@ html {
     display: flex;
   }
 
+  .navbar__cta {
+    padding: 11px 24px;
+    white-space: nowrap;
+  }
+
+  .page-header {
+    padding-top: 130px;
+  }
+
   .mega-menu {
     position: static;
     transform: none;
@@ -3290,6 +3297,12 @@ html {
     padding: 8px 0 8px 16px;
     pointer-events: auto;
   }
+}
+
+@media (max-width: 620px) {
+  section {
+    padding: 64px 0;
+  }
 
   .expertises__grid,
   .prop-services__grid,
@@ -3300,7 +3313,9 @@ html {
   .secteurs__grid,
   .gallery__grid,
   .blog__grid,
-  .jobs__grid {
+  .jobs__grid,
+  .prop-prestations__grid,
+  .prop-confiance__grid {
     grid-template-columns: 1fr;
   }
 
@@ -3319,10 +3334,6 @@ html {
 
   .footer__inner {
     grid-template-columns: 1fr;
-  }
-
-  .page-header {
-    padding-top: 130px;
   }
 
   .lightbox__nav--prev {
