@@ -40,6 +40,11 @@ app.get("/", (_req, res) => {
 
 app.use("/api", routes);
 
+// Health check pour Render
+app.get("/api/health", (_req, res) => {
+  res.json({ success: true, status: "ok", env: process.env.NODE_ENV });
+});
+
 // Fichiers statiques du client build + fallback SPA (React Router)
 if (fs.existsSync(path.join(clientDist, "index.html"))) {
   const cleanPath = (p) => p.split("?")[0];
