@@ -3286,17 +3286,7 @@ html {
   }
 
   .mega-menu {
-    position: static;
-    transform: none;
-    min-width: auto;
-    grid-template-columns: 1fr;
-    opacity: 1;
-    visibility: visible;
-    border: none;
-    background: transparent;
-    box-shadow: none;
-    padding: 8px 0 8px 16px;
-    pointer-events: auto;
+    display: none;
   }
 }
 
