@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "../components/Hero.jsx";
 import Expertises from "../components/Expertises.jsx";
+import Evenements from "../components/Evenements.jsx";
 import Chiffres from "../components/Chiffres.jsx";
 import PourquoiNous from "../components/PourquoiNous.jsx";
 import Secteurs from "../components/Secteurs.jsx";
@@ -20,6 +21,7 @@ export default function Home() {
     <>
       <Hero />
       <Expertises />
+      <Evenements />
       <Chiffres />
       <PourquoiNous />
       <Secteurs />

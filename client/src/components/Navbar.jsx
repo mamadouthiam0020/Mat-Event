@@ -49,12 +49,12 @@ export default function Navbar() {
   ];
 
   const matTransportServices = [
-    t("transportPage.services.list.0"),
-    t("transportPage.services.list.1"),
-    t("transportPage.services.list.2"),
-    t("transportPage.services.list.3"),
-    t("transportPage.services.list.4"),
-    t("transportPage.services.list.5"),
+    t("transportPage.services.list.0.titre"),
+    t("transportPage.services.list.1.titre"),
+    t("transportPage.services.list.2.titre"),
+    t("transportPage.services.list.3.titre"),
+    t("transportPage.services.list.4.titre"),
+    t("transportPage.services.list.5.titre"),
   ];
 
   return (

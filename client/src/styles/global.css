@@ -867,6 +867,47 @@ section {
   color: var(--mauve-light);
 }
 
+/* ================= Galerie Accueil ================= */
+.evenements {
+  background: var(--black);
+}
+
+.evenements__gallery {
+  columns: 3;
+  column-gap: 20px;
+}
+
+.gallery-photo {
+  break-inside: avoid;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s, border-color 0.4s;
+}
+
+.gallery-photo:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  box-shadow: var(--glow-gold);
+}
+
+.gallery-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.gallery-photo:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-photo--wide img {
+  width: 100%;
+}
+
 /* ================= Chiffres ================= */
 .chiffres {
   background: var(--gradient-mauve);
@@ -974,6 +1015,10 @@ section {
   border-radius: 14px;
   border: 1px solid var(--border);
   background: var(--black-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   text-align: center;
   transition: transform 0.3s, border-color 0.3s;
 }
@@ -985,13 +1030,13 @@ section {
 
 .secteur__icon {
   font-size: 2rem;
-  margin-bottom: 12px;
 }
 
 .secteur__name {
   font-family: var(--font-display);
   font-size: 1.1rem;
   color: var(--white);
+  white-space: nowrap;
 }
 
 /* ================= Temoignages ================= */
@@ -3124,6 +3169,10 @@ html {
     grid-template-columns: 1fr 1fr;
   }
 
+  .evenements__gallery {
+    columns: 2;
+  }
+
   .universes__grid {
     grid-template-columns: 1fr;
   }
@@ -3253,6 +3302,10 @@ html {
   .blog__grid,
   .jobs__grid {
     grid-template-columns: 1fr;
+  }
+
+  .evenements__gallery {
+    columns: 1;
   }
 
   .form__row,

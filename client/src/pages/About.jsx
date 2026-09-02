@@ -33,7 +33,7 @@ export default function About() {
       <section className="page-hero">
         <div
           className="page-hero__bg"
-          style={{ backgroundImage: `url(${imageFor("hero")})` }}
+          style={{ backgroundImage: `url(${imageFor("aproposHero")})` }}
         />
         <div className="page-hero__overlay page-hero__overlay--event" />
         <div className="container">
@@ -57,7 +57,7 @@ export default function About() {
               <p className="about__p">{t("about.mission.p2")}</p>
             </div>
             <div className="about__visual reveal" style={{ transitionDelay: "0.1s" }}>
-              <img src={imageFor("eventHero")} alt={t("about.mission.titre")} loading="lazy" />
+              <img src={imageFor("histoire")} alt={t("about.mission.titre")} loading="lazy" />
             </div>
           </div>
         </div>

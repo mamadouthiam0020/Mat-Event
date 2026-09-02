@@ -4,6 +4,22 @@ import { useTranslation } from "react-i18next";
 import { useSEO } from "../hooks/useSEO.js";
 import { useReveal } from "../hooks/useReveal.js";
 import { imageFor } from "../lib/images.js";
+import Evenements from "../components/Evenements.jsx";
+
+const MAT_EVENT_PHOTOS = [
+  "/event-01.jpeg",
+  "/event-03.jpeg",
+  "/event-05.jpeg",
+  "/event-06.jpeg",
+  "/event-07.jpeg",
+  "/event-08.jpeg",
+  "/event-10.jpeg",
+  "/event-12.jpeg",
+  "/event-14.jpeg",
+  "/event-16.jpeg",
+  "/event-17.jpeg",
+  "/event-18.jpeg",
+];
 
 export default function MatEventPage() {
   const { t } = useTranslation();
@@ -61,7 +77,7 @@ export default function MatEventPage() {
               <p className="about__p">{t("matEventPage.quiSommesNous.p2")}</p>
             </div>
             <div className="about__visual reveal" style={{ transitionDelay: "0.1s" }}>
-              <img src={imageFor("corporate")} alt={t("matEventPage.quiSommesNous.titre")} loading="lazy" />
+              <img src={imageFor("quiSommesNous")} alt={t("matEventPage.quiSommesNous.titre")} loading="lazy" />
             </div>
           </div>
         </div>
@@ -186,6 +202,13 @@ export default function MatEventPage() {
           </div>
         </div>
       </section>
+
+      <Evenements
+        title="Nos événements en images"
+        eyebrow="Portfolio Mat'Event"
+        photos={MAT_EVENT_PHOTOS}
+        baseId="event-galerie"
+      />
 
       <section className="me-contact">
         <div className="container">
