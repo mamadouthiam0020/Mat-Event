@@ -14,9 +14,23 @@ export default function Footer() {
           </Link>
           <p>{t("footer.tagline")}</p>
           <div className="footer__brand-links">
-            <a href="#" className="footer__social" aria-label="Instagram">IG</a>
-            <a href="#" className="footer__social" aria-label="Facebook">FB</a>
-            <a href="#" className="footer__social" aria-label="LinkedIn">LI</a>
+            <a href="#" className="footer__social" aria-label="Instagram" target="_blank" rel="noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="currentColor" strokeWidth="1.8"/>
+                <circle cx="12" cy="12" r="4.2" stroke="currentColor" strokeWidth="1.8"/>
+                <circle cx="17.2" cy="6.8" r="1.3" fill="currentColor"/>
+              </svg>
+            </a>
+            <a href="#" className="footer__social" aria-label="Facebook" target="_blank" rel="noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M14 8.5V6.8c0-.7.2-1.2 1.4-1.2H17V2.6h-2.4C11.6 2.6 11 4.9 11 6.9v1.6H8.5V12H11v9.4h3V12h2.4l.4-3.5H14z"/>
+              </svg>
+            </a>
+            <a href="#" className="footer__social" aria-label="LinkedIn" target="_blank" rel="noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M6.5 9.2v8.9H3.4V9.2h3.1zM4.9 3c-1 0-1.9.8-1.9 1.9 0 1 .8 1.9 1.9 1.9 1.1 0 1.9-.9 1.9-1.9 0-1.1-.8-1.9-1.9-1.9zM9.6 9.2h3v1.2c.5-.8 1.6-1.5 3.1-1.5 2.9 0 3.9 1.8 3.9 4.4v4.8h-3.1v-4.3c0-1.5-.5-2.4-1.7-2.4-1.2 0-1.9.8-1.9 2.4v4.3H9.6V9.2z"/>
+              </svg>
+            </a>
           </div>
         </div>
 
