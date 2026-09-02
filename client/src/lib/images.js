@@ -11,6 +11,8 @@ const UNSPLASH = {
 
   // Mat'Event specific
   eventHero: "/event-38.jpeg",
+  event04: "/event-04.jpeg",
+  event15: "/event-15.jpeg",
   histoire: "/event-51.jpeg",
   quiSommesNous: "/event-25.jpeg",
   aproposHero: "/event-13.jpeg",

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "./LanguageSwitcher.jsx";
 
@@ -8,9 +8,6 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
-
-  const onHome = location.pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -21,41 +18,6 @@ export default function Navbar() {
   useEffect(() => {
     setOpen(false);
   }, [location]);
-
-  const goSection = (id) => (e) => {
-    e.preventDefault();
-    setOpen(false);
-    if (onHome) {
-      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    } else {
-      navigate(`/#${id}`);
-    }
-  };
-
-  const matEventServices = [
-    t("expertises.items.evenementiel.titre"),
-    t("expertises.items.communication.titre"),
-    t("expertises.items.organisation.titre"),
-    t("expertises.items.seminaires.titre"),
-    t("expertises.items.hostes.titre"),
-    t("expertises.items.mannequins.titre"),
-  ];
-
-  const matPropServices = [
-    t("propServices.items.bureaux.titre"),
-    t("propServices.items.espaces.titre"),
-    t("propServices.items.administratifs.titre"),
-    t("propServices.items.apresEvent.titre"),
-  ];
-
-  const matTransportServices = [
-    t("transportPage.services.list.0.titre"),
-    t("transportPage.services.list.1.titre"),
-    t("transportPage.services.list.2.titre"),
-    t("transportPage.services.list.3.titre"),
-    t("transportPage.services.list.4.titre"),
-    t("transportPage.services.list.5.titre"),
-  ];
 
   return (
     <header className={`navbar ${scrolled ? "is-scrolled" : ""}`}>
@@ -75,36 +37,6 @@ export default function Navbar() {
           >
             {t("nav.aPropos")}
           </Link>
-
-          <div className="navbar__item">
-            <span className="navbar__link">{t("nav.expertises")}</span>
-            <div className="mega-menu">
-              <div className="mega-menu__col">
-                <h4>Mat'Event</h4>
-                {matEventServices.map((s) => (
-                  <a key={s} href="#expertises" onClick={goSection("expertises")}>
-                    {s}
-                  </a>
-                ))}
-              </div>
-              <div className="mega-menu__col mega-menu__col--prop">
-                <h4>Mat'Prop</h4>
-                {matPropServices.map((s) => (
-                  <a key={s} href="#prop-services" onClick={goSection("prop-services")}>
-                    {s}
-                  </a>
-                ))}
-              </div>
-              <div className="mega-menu__col mega-menu__col--transport">
-                <h4>Mat'Transport</h4>
-                {matTransportServices.map((s) => (
-                  <Link key={s} to="/mat-event-transport" onClick={() => setOpen(false)}>
-                    {s}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
 
           <Link
             to="/mat-event"

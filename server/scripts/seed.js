@@ -73,6 +73,7 @@ const gallery = [
   { title: "Lancement de produit", category: "corporate", url: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=80", thumb: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=400&q=60", featured: false, sort: 7 },
   { title: "Table d'invités", category: "decoration", url: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=80", thumb: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=400&q=60", featured: false, sort: 8 },
   { title: "Cérémonie", category: "mariage", url: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80", thumb: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=400&q=60", featured: false, sort: 9 },
+  { title: "Nos plus beaux instants", category: "soiree", url: "/event-49.jpeg", thumb: "/event-49.jpeg", featured: true, sort: 10 },
 ];
 
 const blogSeed = [

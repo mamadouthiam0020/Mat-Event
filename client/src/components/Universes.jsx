@@ -18,7 +18,7 @@ export default function Universes() {
           <div className="universe-card universe-card--event universe-card--featured reveal">
             <div
               className="universe-card__bg"
-              style={{ backgroundImage: `url(${imageFor("corporate")})` }}
+              style={{ backgroundImage: `url(${imageFor("event04")})` }}
             />
             <div className="universe-card__overlay" />
             <div className="universe-card__content">

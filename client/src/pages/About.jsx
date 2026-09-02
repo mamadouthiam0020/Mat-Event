@@ -18,6 +18,8 @@ const PARTNERS = [
   { name: "2STV", src: "/partners/2stv.webp" },
 ];
 
+const PARTNERS_MARQUEE = Array.from({ length: 5 }, () => PARTNERS).flat();
+
 export default function About() {
   const { t } = useTranslation();
   const ref = useReveal();
@@ -137,16 +139,18 @@ export default function About() {
           <p className="eyebrow gold reveal">{t("about.partners.eyebrow")}</p>
           <h2 className="section-title reveal">{t("about.partners.titre")}</h2>
           <p className="partners__sub reveal">{t("about.partners.sub")}</p>
-          <div className="partners__row reveal">
-            {PARTNERS.map((p) => (
-              <div key={p.name} className="partner">
-                <img
-                  src={p.src}
-                  alt={`${t("about.partners.alt")} ${p.name}`}
-                  loading="lazy"
-                />
-              </div>
-            ))}
+          <div className="partners__marquee reveal">
+            <div className="partners__track">
+              {[...PARTNERS_MARQUEE, ...PARTNERS_MARQUEE].map((p, i) => (
+                <div key={`${p.name}-${i}`} className="partner">
+                  <img
+                    src={p.src}
+                    alt={`${t("about.partners.alt")} ${p.name}`}
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

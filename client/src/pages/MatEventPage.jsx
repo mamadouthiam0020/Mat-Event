@@ -5,6 +5,7 @@ import { useSEO } from "../hooks/useSEO.js";
 import { useReveal } from "../hooks/useReveal.js";
 import { imageFor } from "../lib/images.js";
 import Evenements from "../components/Evenements.jsx";
+import Universes from "../components/Universes.jsx";
 
 const MAT_EVENT_PHOTOS = [
   "/event-01.jpeg",
@@ -209,6 +210,8 @@ export default function MatEventPage() {
         photos={MAT_EVENT_PHOTOS}
         baseId="event-galerie"
       />
+
+      <Universes />
 
       <section className="me-contact">
         <div className="container">
