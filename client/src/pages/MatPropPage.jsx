@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useSEO } from "../hooks/useSEO.js";
 import { useReveal } from "../hooks/useReveal.js";
 import { imageFor } from "../lib/images.js";
+import Icon from "../components/Icon.jsx";
 
 export default function MatPropPage() {
   const { t } = useTranslation();
@@ -150,7 +151,9 @@ export default function MatPropPage() {
           <div className="prop-confiance__grid">
             {t("matPropPage.confiance.list", { returnObjects: true }).map((item, i) => (
               <div className="prop-confiance__item reveal" key={i} style={{ transitionDelay: `${(i % 3) * 0.06}s` }}>
-                <span className="prop-confiance__check">✓</span>
+                <span className="prop-confiance__check">
+                  <Icon name="Check" />
+                </span>
                 <p>{item}</p>
               </div>
             ))}
@@ -168,7 +171,9 @@ export default function MatPropPage() {
           <div className="prop-confiance__grid">
             {t("matPropPage.services.list", { returnObjects: true }).map((item, i) => (
               <div className="prop-confiance__item prop-confiance__item--center reveal" key={i} style={{ transitionDelay: `${(i % 3) * 0.06}s` }}>
-                <span className="prop-confiance__check">✓</span>
+                <span className="prop-confiance__check">
+                  <Icon name="Check" />
+                </span>
                 <p>{item}</p>
               </div>
             ))}

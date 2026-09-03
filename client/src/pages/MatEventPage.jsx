@@ -6,6 +6,7 @@ import { useReveal } from "../hooks/useReveal.js";
 import { imageFor } from "../lib/images.js";
 import Evenements from "../components/Evenements.jsx";
 import Universes from "../components/Universes.jsx";
+import Icon from "../components/Icon.jsx";
 
 const MAT_EVENT_PHOTOS = [
   "/event-01.jpeg",
@@ -109,73 +110,68 @@ export default function MatEventPage() {
           <h2 className="section-title reveal">{t("matEventPage.prestations.titre")}</h2>
 
           <div className="detail-blocks">
-            {/* Accueil événementiel */}
             <article className="detail-block reveal">
               <div className="detail-block__header">
-                <span className="detail-block__icon">🎫</span>
+                <span className="detail-block__icon">
+                  <Icon name="Ticket" />
+                </span>
                 <h3>{p("accueilEvent.titre")}</h3>
               </div>
-              <p className="detail-block__text">{p("accueilEvent.texte")}</p>
-              <p className="detail-block__text2">{p("accueilEvent.subtitle")}</p>
-              <ul className="detail-block__list line-2">
+              <p className="detail-block__intro">{p("accueilEvent.intro")}</p>
+              <ul className="detail-block__list">
                 {renderList("matEventPage.prestations.accueilEvent.list").map((li) => (
                   <li key={li}>{li}</li>
                 ))}
               </ul>
-              <p className="detail-block__text2">{p("accueilEvent.list2")}</p>
+              <Link to="/#devis" className="detail-block__link">
+                {t("common.enSavoirPlus")}
+                <Icon name="ArrowRight" size={16} />
+              </Link>
             </article>
 
-            {/* Accueil en entreprise */}
-            <article className="detail-block reveal">
+            <article className="detail-block reveal" style={{ transitionDelay: "0.08s" }}>
               <div className="detail-block__header">
-                <span className="detail-block__icon">🏢</span>
+                <span className="detail-block__icon">
+                  <Icon name="Building2" />
+                </span>
                 <h3>{p("accueilEntreprise.titre")}</h3>
               </div>
-              <p className="detail-block__text">{p("accueilEntreprise.texte")}</p>
-              <h4 className="detail-block__sub">{p("accueilEntreprise.engagementsTitle")}</h4>
+              <p className="detail-block__intro">{p("accueilEntreprise.intro")}</p>
               <ul className="detail-block__list">
-                {renderList("matEventPage.prestations.accueilEntreprise.engagements").map((li) => (
-                  <li key={li}>{li}</li>
-                ))}
-              </ul>
-              <p className="detail-block__text2">{p("accueilEntreprise.tranquillite")}</p>
-              <h4 className="detail-block__sub">{p("accueilEntreprise.missionTitle")}</h4>
-              <ul className="detail-block__list">
-                {renderList("matEventPage.prestations.accueilEntreprise.mission").map((li) => (
+                {renderList("matEventPage.prestations.accueilEntreprise.list").map((li) => (
                   <li key={li}>{li}</li>
                 ))}
               </ul>
             </article>
 
-            {/* Street marketing */}
             <article className="detail-block reveal">
               <div className="detail-block__header">
-                <span className="detail-block__icon">📣</span>
+                <span className="detail-block__icon">
+                  <Icon name="Megaphone" />
+                </span>
                 <h3>{p("streetMarketing.titre")}</h3>
               </div>
-              <p className="detail-block__text">{p("streetMarketing.texte")}</p>
-              <p className="detail-block__text2">{p("streetMarketing.texte2")}</p>
-              <ul className="detail-block__list line-2">
+              <p className="detail-block__intro">{p("streetMarketing.intro")}</p>
+              <ul className="detail-block__list">
                 {renderList("matEventPage.prestations.streetMarketing.list").map((li) => (
                   <li key={li}>{li}</li>
                 ))}
               </ul>
             </article>
 
-            {/* Communication / Organisation */}
-            <article className="detail-block reveal">
+            <article className="detail-block reveal" style={{ transitionDelay: "0.08s" }}>
               <div className="detail-block__header">
-                <span className="detail-block__icon">🤝</span>
+                <span className="detail-block__icon">
+                  <Icon name="Handshake" />
+                </span>
                 <h3>{p("communication.titre")}</h3>
               </div>
-              <p className="detail-block__text">{p("communication.texte")}</p>
-              <p className="detail-block__text">{p("communication.texte2")}</p>
-              <p className="detail-block__text">{p("communication.texte3")}</p>
-              <p className="detail-block__text2">{p("communication.texte4")}</p>
-              <h4 className="detail-block__sub">{p("communication.communicationTitle")}</h4>
-              <p className="detail-block__text">{p("communication.communication")}</p>
-              <h4 className="detail-block__sub">{p("communication.atoutsTitle")}</h4>
-              <p className="detail-block__text">{p("communication.atouts")}</p>
+              <p className="detail-block__intro">{p("communication.intro")}</p>
+              <ul className="detail-block__list">
+                {renderList("matEventPage.prestations.communication.list").map((li) => (
+                  <li key={li}>{li}</li>
+                ))}
+              </ul>
             </article>
           </div>
         </div>
@@ -220,13 +216,17 @@ export default function MatEventPage() {
             <h2 className="section-title">Mat'Event</h2>
             <p className="me-contact__address">{t("matEventPage.contact.address")}</p>
             <div className="me-contact__row">
-              <span className="me-contact__label">📞</span>
+              <span className="me-contact__label">
+                <Icon name="Phone" />
+              </span>
               {t("matEventPage.contact.phones", { returnObjects: true }).map((ph) => (
                 <a key={ph} href={`tel:${ph.replace(/\s/g, "")}`}>{ph}</a>
               ))}
             </div>
             <div className="me-contact__row">
-              <span className="me-contact__label">✉️</span>
+              <span className="me-contact__label">
+                <Icon name="Mail" />
+              </span>
               {t("matEventPage.contact.emails", { returnObjects: true }).map((em) => (
                 <a key={em} href={`mailto:${em}`}>{em}</a>
               ))}

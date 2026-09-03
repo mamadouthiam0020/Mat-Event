@@ -1,13 +1,14 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useReveal } from "../hooks/useReveal.js";
+import Icon from "./Icon.jsx";
 
 const ITEMS = [
-  { icon: "🏅", key: "expertise" },
-  { icon: "🤝", key: "fiabilite" },
-  { icon: "💎", key: "qualite" },
-  { icon: "🔄", key: "flexibilite" },
-  { icon: "👥", key: "accompagnement" },
+  { icon: "Medal", key: "expertise" },
+  { icon: "Handshake", key: "fiabilite" },
+  { icon: "Gem", key: "qualite" },
+  { icon: "RefreshCw", key: "flexibilite" },
+  { icon: "Users", key: "accompagnement" },
 ];
 
 export default function PourquoiNous() {
@@ -27,7 +28,9 @@ export default function PourquoiNous() {
               className="pourquoi__item reveal"
               style={{ transitionDelay: `${Math.min(i, 3) * 0.05}s` }}
             >
-              <span className="pourquoi__icon">{item.icon}</span>
+              <span className="pourquoi__icon">
+                <Icon name={item.icon} />
+              </span>
               <h3 className="pourquoi__title">
                 {t(`pourquoi.items.${item.key}.titre`)}
               </h3>

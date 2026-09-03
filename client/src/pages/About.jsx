@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useSEO } from "../hooks/useSEO.js";
 import { useReveal } from "../hooks/useReveal.js";
 import { imageFor } from "../lib/images.js";
+import Icon from "../components/Icon.jsx";
 
 const VALUES = ["elegance", "professionnalisme", "creativite", "organisation", "excellence", "proximite"];
 
@@ -95,7 +96,9 @@ export default function About() {
                 className="value reveal"
                 style={{ transitionDelay: `${Math.min(i, 3) * 0.05}s` }}
               >
-                <span className="value__icon">{t(`about.values.${key}.icon`)}</span>
+                <span className="value__icon">
+                  <Icon name={t(`about.values.${key}.icon`)} />
+                </span>
                 <h3 className="value__title">{t(`about.values.${key}.titre`)}</h3>
                 <p className="value__text">{t(`about.values.${key}.texte`)}</p>
               </div>

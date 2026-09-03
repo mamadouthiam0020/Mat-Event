@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { api } from "../api.js";
 import { useReveal } from "../hooks/useReveal.js";
+import Icon from "./Icon.jsx";
 
 export default function Temoignages() {
   const { t } = useTranslation();
@@ -63,7 +64,11 @@ export default function Temoignages() {
               className="quote"
               style={{ animationDelay: `${(i % 3) * 0.08}s` }}
             >
-              <p className="quote__stars">★★★★★</p>
+              <p className="quote__stars">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Icon key={i} name="Star" fill="currentColor" strokeWidth={0} />
+                ))}
+              </p>
               <p className="quote__text">"{x.content}"</p>
               <footer className="quote__author">
                 <div className="quote__avatar">{getInitials(x.name)}</div>

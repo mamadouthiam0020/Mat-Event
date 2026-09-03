@@ -4,6 +4,7 @@ import { api } from "../api.js";
 import { onImgError } from "../lib/images.js";
 import { useSEO } from "../hooks/useSEO.js";
 import { useReveal } from "../hooks/useReveal.js";
+import Icon from "../components/Icon.jsx";
 
 const FALLBACK = [
   { title: "Mariage Awa & Mamadou", category: "mariage", url: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80", thumb: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=400&q=60" },
@@ -115,7 +116,7 @@ export default function Galerie() {
             }}
             aria-label={t("gallery.fermer")}
           >
-            ✕
+            <Icon name="X" />
           </button>
           <button
             className="lightbox__nav lightbox__nav--prev"

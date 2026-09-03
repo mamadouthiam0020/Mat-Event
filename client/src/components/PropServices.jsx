@@ -3,8 +3,9 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { useReveal } from "../hooks/useReveal.js";
 import { imageFor } from "../lib/images.js";
+import Icon from "./Icon.jsx";
 
-const PROP_ICONS = ["🏢", "🧹", "🏛️", "✨", "📋", "🔄"];
+const PROP_ICONS = ["Building2", "SprayCan", "Landmark", "Sparkles", "ClipboardList", "RefreshCw"];
 const PROP_KEYS = ["bureaux", "espaces", "administratifs", "apresEvent", "personnalise", "régulier"];
 
 export default function PropServices() {
@@ -24,7 +25,9 @@ export default function PropServices() {
               className="prop-card reveal"
               style={{ transitionDelay: `${i * 0.06}s` }}
             >
-              <span className="prop-card__icon">{PROP_ICONS[i]}</span>
+              <span className="prop-card__icon">
+                <Icon name={PROP_ICONS[i]} />
+              </span>
               <h3 className="prop-card__title">
                 {t(`propServices.items.${key}.titre`)}
               </h3>

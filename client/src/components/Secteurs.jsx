@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useReveal } from "../hooks/useReveal.js";
+import Icon from "./Icon.jsx";
 
 export default function Secteurs() {
   const { t } = useTranslation();
@@ -20,7 +21,9 @@ export default function Secteurs() {
               className="secteur reveal"
               style={{ transitionDelay: `${Math.min(i, 3) * 0.04}s` }}
             >
-              <span className="secteur__icon">{item.icon}</span>
+              <span className="secteur__icon">
+                <Icon name={item.icon} />
+              </span>
               <span className="secteur__name">{item.name}</span>
             </div>
           ))}

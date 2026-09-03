@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useSEO } from "../hooks/useSEO.js";
 import { useReveal } from "../hooks/useReveal.js";
 import { imageFor } from "../lib/images.js";
+import Icon from "../components/Icon.jsx";
 
 export default function MatEventTransport() {
   const { t } = useTranslation();
@@ -92,7 +93,9 @@ export default function MatEventTransport() {
                 className="transport-service reveal"
                 style={{ transitionDelay: `${(i % 3) * 0.07}s` }}
               >
-                <span className="transport-service__icon">{item.icon}</span>
+                <span className="transport-service__icon">
+                  <Icon name={item.icon} />
+                </span>
                 <h3 className="transport-service__title">{item.titre}</h3>
                 <p className="transport-service__text">{item.texte}</p>
               </div>
@@ -107,12 +110,14 @@ export default function MatEventTransport() {
             <p className="eyebrow gold">{t("transportPage.contact.titre")}</p>
             <div className="me-contact__phones">
               {t("transportPage.contact.phones", { returnObjects: true }).map((ph) => (
-                <a key={ph} href={`tel:${ph.replace(/\s/g, "")}`}>📞 {ph}</a>
+                <a key={ph} href={`tel:${ph.replace(/\s/g, "")}`}>
+                  <Icon name="Phone" size={18} /> {ph}
+                </a>
               ))}
             </div>
             <div className="me-contact__emails">
               <a href={`mailto:${t("transportPage.contact.email")}`}>
-                ✉️ {t("transportPage.contact.email")}
+                <Icon name="Mail" size={18} /> {t("transportPage.contact.email")}
               </a>
             </div>
             <Link to="/#devis" className="btn btn--gold btn--lg me-contact__cta">
