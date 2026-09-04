@@ -1534,6 +1534,10 @@ section {
   max-width: 700px;
 }
 
+.page-hero__content .hero__actions {
+  justify-content: flex-start;
+}
+
 .page-hero__badge {
   display: inline-block;
   padding: 6px 20px;

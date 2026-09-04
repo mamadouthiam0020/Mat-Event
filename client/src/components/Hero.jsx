@@ -13,7 +13,6 @@ export default function Hero() {
         style={{ backgroundImage: `url(${imageFor("hero")})` }}
       />
       <div className="hero__content container">
-        <span className="hero__badge">{t("hero.badge")}</span>
         <h1 className="hero__title">
           {t("hero.titre1")}
           <br />
